@@ -1,7 +1,4 @@
-/*
- * 2-topshiriq, 19-variant: Ikkilik qidiruv daraxti (BST)
- * macOS: clang -std=c11 -Wall -Wextra -pedantic main_task2.c -o task2
- */
+
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -52,7 +49,6 @@ static Node *create_node(int value) {
     return node;
 }
 
-/* Takroriy qiymatlar kiritilsa, ular qayta qo'shilmaydi. */
 static Node *insert(Node *root, int value, int *ok) {
     if (root == NULL) {
         Node *node = create_node(value);
@@ -89,7 +85,6 @@ static const Node *search(const Node *root, int value) {
     return NULL;
 }
 
-/* In-order: chap qism, tugun, o'ng qism — qiymatlar o'sish tartibida. */
 static void inorder(const Node *root) {
     if (root == NULL) {
         return;
@@ -98,8 +93,6 @@ static void inorder(const Node *root) {
     printf("%d ", root->value);
     inorder(root->right);
 }
-
-/* Har bir tugun rekursiv tarzda bo'shatiladi. */
 static void free_tree(Node *root) {
     if (root == NULL) {
         return;
