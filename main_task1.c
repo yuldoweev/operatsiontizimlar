@@ -1,7 +1,4 @@
-/*
- * 1-topshiriq, 19-variant: Sezar shifri
- * macOS: clang -std=c11 -Wall -Wextra -pedantic main_task1.c -o task1
- */
+
 #include <ctype.h>
 #include <errno.h>
 #include <stdio.h>
@@ -35,7 +32,7 @@ static int read_long(const char *prompt, long *value) {
     return 1;
 }
 
-/* Satrni joyida o'zgartiradi: yangi massiv kerak emas. */
+
 static void shifrla(char *s, int k) {
     int shift = k % 26;
 
@@ -45,7 +42,7 @@ static void shifrla(char *s, int k) {
         } else if (*p >= 'a' && *p <= 'z') {
             *p = (char)('a' + ((*p - 'a' + shift + 26) % 26));
         }
-        /* Harf bo'lmagan belgilar o'zgarmaydi. */
+
     }
 }
 
@@ -76,7 +73,7 @@ int main(void) {
         return 1;
     }
 
-    /* Deshifrlash — shu algoritmni teskari kalit bilan ishlatish. */
+   
     long normalized = key % 26;
     if (choice == 2) {
         normalized = -normalized;
